@@ -51,7 +51,7 @@ public interface MemoRepository extends JpaRepository<Memo, Long> {
 
     @Transactional
     @Modifying
-    @Query("update Memo m set m.memoText = :#{param.memoText} where m.mno = :mno ")
+    @Query("update Memo m set m.memoText = :#{#param.memoText} where m.mno = :#{#param.mno} ")
     int updateMemoTextBean(@Param("param") Memo memo);
     // :#{  } -> 자바 빈 스타일
 
